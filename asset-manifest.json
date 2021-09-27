@@ -1,31 +1,25 @@
 {
   "files": {
-    "main.css": "/alpha-portfolio/static/css/main.fe3de15c.chunk.css",
-    "main.js": "/alpha-portfolio/static/js/main.ed1c81d5.chunk.js",
-    "main.js.map": "/alpha-portfolio/static/js/main.ed1c81d5.chunk.js.map",
-    "runtime-main.js": "/alpha-portfolio/static/js/runtime-main.9b2d3793.js",
-    "runtime-main.js.map": "/alpha-portfolio/static/js/runtime-main.9b2d3793.js.map",
-    "static/js/2.b61757c6.chunk.js": "/alpha-portfolio/static/js/2.b61757c6.chunk.js",
-    "static/js/2.b61757c6.chunk.js.map": "/alpha-portfolio/static/js/2.b61757c6.chunk.js.map",
-    "static/js/3.2f118fb9.chunk.js": "/alpha-portfolio/static/js/3.2f118fb9.chunk.js",
-    "static/js/3.2f118fb9.chunk.js.map": "/alpha-portfolio/static/js/3.2f118fb9.chunk.js.map",
+    "main.css": "/alpha-portfolio/static/css/main.27ed81fa.chunk.css",
+    "main.js": "/alpha-portfolio/static/js/main.d027671f.chunk.js",
+    "main.js.map": "/alpha-portfolio/static/js/main.d027671f.chunk.js.map",
+    "runtime-main.js": "/alpha-portfolio/static/js/runtime-main.49af3d7a.js",
+    "runtime-main.js.map": "/alpha-portfolio/static/js/runtime-main.49af3d7a.js.map",
+    "static/js/2.8e90394c.chunk.js": "/alpha-portfolio/static/js/2.8e90394c.chunk.js",
+    "static/js/2.8e90394c.chunk.js.map": "/alpha-portfolio/static/js/2.8e90394c.chunk.js.map",
+    "static/js/3.73ba3ee2.chunk.js": "/alpha-portfolio/static/js/3.73ba3ee2.chunk.js",
+    "static/js/3.73ba3ee2.chunk.js.map": "/alpha-portfolio/static/js/3.73ba3ee2.chunk.js.map",
     "index.html": "/alpha-portfolio/index.html",
-    "static/css/main.fe3de15c.chunk.css.map": "/alpha-portfolio/static/css/main.fe3de15c.chunk.css.map",
-    "static/js/2.b61757c6.chunk.js.LICENSE.txt": "/alpha-portfolio/static/js/2.b61757c6.chunk.js.LICENSE.txt",
-    "static/media/aaashir128_github_io_CastleWood.d1d70d8c.jpg": "/alpha-portfolio/static/media/aaashir128_github_io_CastleWood.d1d70d8c.jpg",
+    "static/css/main.27ed81fa.chunk.css.map": "/alpha-portfolio/static/css/main.27ed81fa.chunk.css.map",
+    "static/js/2.8e90394c.chunk.js.LICENSE.txt": "/alpha-portfolio/static/js/2.8e90394c.chunk.js.LICENSE.txt",
     "static/media/backEnd.ca903f3e.svg": "/alpha-portfolio/static/media/backEnd.ca903f3e.svg",
-    "static/media/castlewoodflix (1).081d07e4.jpg": "/alpha-portfolio/static/media/castlewoodflix (1).081d07e4.jpg",
     "static/media/frontEnd.7b78f5c3.svg": "/alpha-portfolio/static/media/frontEnd.7b78f5c3.svg",
-    "static/media/professionals_agency_web_app.4eb23d0c.jpg": "/alpha-portfolio/static/media/professionals_agency_web_app.4eb23d0c.jpg",
-    "static/media/simple bootstrap castlewood.20064d9e.jpg": "/alpha-portfolio/static/media/simple bootstrap castlewood.20064d9e.jpg",
-    "static/media/twitter-clever_firebaseapp_com.0496c594.jpg": "/alpha-portfolio/static/media/twitter-clever_firebaseapp_com.0496c594.jpg",
-    "static/media/webDesign.731b6fe3.svg": "/alpha-portfolio/static/media/webDesign.731b6fe3.svg",
-    "static/media/whatsapp-clone.2dd77c9d.jpg": "/alpha-portfolio/static/media/whatsapp-clone.2dd77c9d.jpg"
+    "static/media/webDesign.731b6fe3.svg": "/alpha-portfolio/static/media/webDesign.731b6fe3.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9b2d3793.js",
-    "static/js/2.b61757c6.chunk.js",
-    "static/css/main.fe3de15c.chunk.css",
-    "static/js/main.ed1c81d5.chunk.js"
+    "static/js/runtime-main.49af3d7a.js",
+    "static/js/2.8e90394c.chunk.js",
+    "static/css/main.27ed81fa.chunk.css",
+    "static/js/main.d027671f.chunk.js"
   ]
 }

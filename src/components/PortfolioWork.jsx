@@ -6,7 +6,14 @@ import Language from "@material-ui/icons/Language";
 import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-function PortfolioWork({ image, title, details }) {
+function PortfolioWork({
+  image,
+  title,
+  details,
+  githubURL,
+  webURL,
+  timestamp,
+}) {
   return (
     <div className="portfolioWork">
       <div className="portfolioWork__container">
@@ -18,14 +25,14 @@ function PortfolioWork({ image, title, details }) {
           />
           <div className="IconButton">
             <IconButton>
-              <a href="https://castlewood-flix.web.app" target="_blank">
+              <a href={githubURL} target="_blank">
                 <GitHub />
               </a>
             </IconButton>
             <IconButton>
-             
+              <a href={webURL} target="_blank">
                 <Language />
-              
+              </a>
             </IconButton>
           </div>
         </div>

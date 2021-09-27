@@ -1,10 +1,32 @@
 import { Button } from "@material-ui/core";
 import { LocationOn, Mail, Phone } from "@material-ui/icons";
-import React from "react";
+import React, { useState } from "react";
 import Title from "../components/Title";
+import db from "../config/firebase";
 import "./ContactPage.css";
+import firebase from "firebase";
 
 function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendMessage = (e) => {
+    e.preventDefault();
+
+    db.collection("messages")
+      // .doc(`${name}`)
+      // .collection(`${name} messages`)
+      .add({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+  };
+
   return (
     <div className="contactPage">
       <Title title="Contact Me" span="Contact Me" />
@@ -13,18 +35,33 @@ function ContactPage() {
         <div className="contactPage__left">
           <form>
             <h5 className="contactPage__leftInput">Enter Your Name</h5>
-            <input type="text" />
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
             <h5 className="contactPage__leftInput">Enter Your Email</h5>
-            <input type="email" />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <h5 className="contactPage__leftInput">Subject Line</h5>
-            <input type="text" />
+            <input
+              type="text"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+            />
             <h5 className="contactPage__leftInput">Enter Your Message</h5>
-            <textarea placeholder="Your Message here..." />
-
+            <textarea
+              placeholder="Your Message here..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
           </form>
-            <button color="primary" variant="contained">
-              Submit
-            </button>
+          <button color="primary" variant="contained" onClick={sendMessage}>
+            Submit
+          </button>
         </div>
 
         <div className="contactPage__right">

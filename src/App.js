@@ -1,13 +1,21 @@
 import { IconButton, Switch } from "@material-ui/core";
 import { Brightness4, MenuOutlined } from "@material-ui/icons";
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch as Switching, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch as Switching,
+  Route,
+  Link,
+} from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import Sidebar from "./components/Sidebar";
 import AboutPage from "./pages/AboutPage";
+import AdminPage from "./pages/AdminPage";
 import ContactPage from "./pages/ContactPage";
+import MessagePanel from "./pages/MessagePanel";
 import PortfolioPage from "./pages/PortfolioPage";
+import PortfolioPanel from "./pages/PortfolioPanel";
 import ResumePage from "./pages/ResumePage";
 
 function App() {
@@ -54,6 +62,15 @@ function App() {
         <Sidebar navToggle={navToggle} />
 
         <Switching>
+          <Route exact path="/portfolio-panel">
+            <PortfolioPanel />
+          </Route>
+          <Route exact path="/message-panel">
+            <MessagePanel />
+          </Route>
+          <Route exact path="/admin">
+            <AdminPage />
+          </Route>
           <Route exact path="/about">
             <AboutPage />
           </Route>

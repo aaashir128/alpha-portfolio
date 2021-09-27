@@ -2,20 +2,18 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-padding: 45px;
-width: 65%;
+  padding: 45px;
+  width: 65%;
 }
 
 .title__heading {
-
   color: var(--white-color);
   font-size: 3.1rem;
   font-weight: 600;
   text-transform: capitalize;
   position: relative;
   padding-bottom: 1rem;
-  z-index: 99; 
-
+  z-index: 99;
 }
 
 .title__heading::before {
@@ -39,10 +37,9 @@ width: 65%;
   border-radius: 15px;
 }
 
-
 .title__heading > span {
-  font-weight: 900;
-  color: rgba(52, 58, 77, 0.44);
+  font-weight: 600;
+  color: rgba(171, 174, 189, 0.44);
   font-size: 5rem;
   position: absolute;
   left: 20px;
@@ -50,26 +47,86 @@ width: 65%;
   z-index: -1;
 }
 
-@media screen and (max-width: 480px) {
-  
-  .title__heading {
 
+@media screen and (max-width: 480px) {
+  .title__heading {
     color: var(--white-color);
     font-size: 1.9rem;
     font-weight: 500;
     text-transform: capitalize;
     position: relative;
     padding-bottom: 1rem;
-    z-index: 99; 
-  
+    z-index: 99;
   }
   .title__heading > span {
     font-weight: 500;
-  color: rgba(171, 174, 189, 0.44);
-  font-size: 1.8rem;
-  position: absolute;
-  left: 20px;
-  top: 30%;
-  z-index: -1;
+    color: rgba(171, 174, 189, 0.44);
+    font-size: 1.8rem;
+    position: absolute;
+    left: 20px;
+    top: 30%;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 651px) {
+  .title__heading {
+    color: var(--white-color);
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    position: relative;
+    padding-bottom: 1rem;
+    z-index: 99;
+  }
+  .title__heading > span {
+    font-weight: 500;
+    color: rgba(171, 174, 189, 0.44);
+    font-size: 2.8rem;
+    position: absolute;
+    left: 20px;
+    top: 30%;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .title__heading {
+    color: var(--white-color);
+    font-size: 2.9rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    position: relative;
+    padding-bottom: 1rem;
+    z-index: 99;
+  }
+  .title__heading > span {
+    font-weight: 500;
+    color: rgba(171, 174, 189, 0.44);
+    font-size: 3.1rem;
+    position: absolute;
+    left: 20px;
+    top: 30%;
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 395px) {
+  .title__heading {
+    color: var(--white-color);
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    position: relative;
+    padding-bottom: 1rem;
+    z-index: 99;
+  }
+  .title__heading > span {
+    font-weight: 500;
+    color: rgba(171, 174, 189, 0.44);
+    font-size: 2.6rem;
+    position: absolute;
+    left: 20px;
+    top: 30%;
+    z-index: -1;
   }
 }

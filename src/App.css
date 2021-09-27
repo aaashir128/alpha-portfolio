@@ -59,6 +59,7 @@
 }
 
 ::-webkit-scrollbar {
+  height: 8px;
   width: 8px;
   background-color: #383838;
 }
@@ -74,7 +75,7 @@
 
 .lightDarkMode {
   position: absolute;
-  top: 20%;
+  top: 25%;
   right: 0.6%;
   background-color: var(--background-dark-color);
   width: 8rem;

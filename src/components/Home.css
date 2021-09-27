@@ -48,6 +48,14 @@
 
 @media screen and (max-width: 1200px) {
   .home {
-    /* flex: 0.95; */
+    flex: 1;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home__detailsText > h1 {
+    font-size: 3rem;
+    font-weight: 600;
   }
 }

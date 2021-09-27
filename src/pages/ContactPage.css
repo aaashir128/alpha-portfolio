@@ -1,6 +1,6 @@
 .contactPage {
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
   flex: 0.75;
   height: 100vh;
   background-color: var(--background-dark-color);
@@ -76,12 +76,16 @@ textarea {
 .contactPage__rightDetails > h5 {
   font-size: normal;
 }
-.contactPage__rightDetails > .MuiSvgIcon-root{
+.contactPage__rightDetails > .MuiSvgIcon-root {
   color: var(--white-color);
 }
-@media screen and (max-width: 480px) {
-   .contactPageData{
-     display: flex;
-     flex-direction: column;
-   }
+@media screen and (max-width: 1199px) {
+  .contactPage {
+    flex: 1;
+    width: 100%;
+  }
+  .contactPageData{
+    display: flex;
+    flex-direction: column;
+  }
 }

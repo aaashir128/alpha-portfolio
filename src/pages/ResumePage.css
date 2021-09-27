@@ -24,3 +24,12 @@
   font-size: 29px;
   margin-left: 10px;
 }
+
+
+@media screen and (max-width: 1199px) {
+  .resumePage {
+    flex: 1;
+    width: 100%;
+
+  }
+}

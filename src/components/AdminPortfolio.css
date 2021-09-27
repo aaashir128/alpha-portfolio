@@ -1,0 +1,82 @@
+.adminPortfolio{
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+}
+
+.adminPortfolio__container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    margin: 10px;
+}
+
+.adminPortfolio__containerTop{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+ 
+}
+.adminPortfolio__containerTop > .MuiIconButton-root{
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+}
+.adminPortfolio__containerTop > button {
+    height: 1.5rem;
+    width: 50%;
+    margin: 10px;
+    background-color: var(--white-color);
+    color: var(--background-dark-color);
+    font-size: large;
+    font-weight: 500;
+
+}
+
+.adminPortfolio__containerImg{
+    display: flex;
+    flex-direction: column;
+}
+
+.adminPortfolio__containerImg > img{
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.adminPortfolio__containertxt{
+    display: flex;
+    flex-direction: column;
+}
+
+.adminPortfolio__containertxtHead{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 5px;
+}
+.adminPortfolio__containertxtHead > h4{
+    color: var(--primary-color);
+}
+
+.adminPortfolio__containertxtHead > small{ 
+    color: var(--font-light-color);
+}
+.adminPortfolio__containertxtDetails{
+    display: flex;
+}
+.adminPortfolio__containertxtDetails > p {
+    color: var(--white-color);
+    margin: 10px 0;
+}
+
+.adminPortfolio__containertxtUrl{
+    display: flex;
+    flex-direction: column;
+}
+.adminPortfolio__containertxtUrl > h5 {
+    color: var(--white-color);
+}
+.adminPortfolio__containertxtUrl > p {
+    color: var(--font-light-color);
+}

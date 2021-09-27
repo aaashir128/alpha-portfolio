@@ -10,8 +10,9 @@
 
 @media screen and (max-width: 1199px) {
   .aboutPage{
-    flex: 0.95;
-    /* min-width: 100vw; */
+    flex: 1;
+      width: 100%;
      
   }
+  
 }

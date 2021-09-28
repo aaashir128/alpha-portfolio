@@ -2,15 +2,23 @@ import React, { useEffect, useState } from "react";
 import MessageSection from "../components/MessageSection";
 import Title from "../components/Title";
 import db from "../config/firebase";
+import { useStateValue } from "../config/StateProvider";
 import "./MessagePanel.css";
 
 function MessagePanel() {
+  const [{user}, dispatch] = useStateValue()
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    db.collection("messages").onSnapshot((snapshot) => {
-      setMessages(snapshot.docs.map((doc) => doc.data()));
-    });
+    if (user?.uid) {
+      db.collection("user")
+      .doc(`${user.uid}`)
+      .collection('messages')
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        setMessages(snapshot.docs.map((doc) => doc.data()));
+      });
+    }
   }, []);
 
   return (

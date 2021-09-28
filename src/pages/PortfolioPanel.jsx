@@ -79,10 +79,14 @@ function PortfolioPanel() {
   return (
     <div className="portfolioPanel">
       <Title title="Portfolio Panel" span="Portfolio Panel" />
+      
       <div className="portfolioPanel__container">
+        <Title title="Recently Added" />
         <div className="portfolioPanel__previous">
-          {portfolios.map((v, i) => (
+          {portfolios.map((v) => (
             <AdminPortfolio
+              key={v.id}
+              id={v.id}
               image={v.data.image}
               title={v.data.title}
               details={v.data.details}
@@ -93,6 +97,7 @@ function PortfolioPanel() {
           ))}
         </div>
 
+        <Title title="Add New"  />
         <div className="portfolioPanel__addNew">
           <form>
             <h5 className="portfolioPanel__addNewItem">

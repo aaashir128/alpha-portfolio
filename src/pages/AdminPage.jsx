@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import AdminPanelBox from "../components/AdminPanelBox";
 import Title from "../components/Title";
+import { auth } from "../config/firebase";
 import "./AdminPage.css";
 
 
 function AdminPage() {
+  const history = useHistory()
+
+  const signOut = () => {
+    auth.signOut()
+    history.push('/login')
+  }
+
   return (
     <div className="adminPage">
       <Title title="Admin Panel" span="Admin Panel" />
+      <button onClick={signOut}>Sign out</button>
       <div className="adminPage__panels">
         <Link to="/message-panel">
           <AdminPanelBox

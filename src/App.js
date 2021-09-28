@@ -10,18 +10,41 @@ import {
 import "./App.css";
 import Home from "./components/Home";
 import Sidebar from "./components/Sidebar";
+import { auth } from "./config/firebase";
+import { useStateValue } from "./config/StateProvider";
 import AboutPage from "./pages/AboutPage";
 import AdminPage from "./pages/AdminPage";
 import ContactPage from "./pages/ContactPage";
+import Login from "./pages/Login";
 import MessagePanel from "./pages/MessagePanel";
 import PortfolioPage from "./pages/PortfolioPage";
 import PortfolioPanel from "./pages/PortfolioPanel";
 import ResumePage from "./pages/ResumePage";
 
 function App() {
+  const [{}, dispatch] = useStateValue();
+
   const [theme, setTheme] = useState("dark-theme");
   const [checked, setChecked] = useState(false);
   const [navToggle, setNavToggle] = useState(false);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      console.log("This is Auth User >>>> ", authUser);
+
+      if (authUser) {
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+  }, []);
 
   useEffect(() => {
     document.documentElement.className = theme;
@@ -67,6 +90,9 @@ function App() {
           </Route>
           <Route exact path="/message-panel">
             <MessagePanel />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route exact path="/admin">
             <AdminPage />

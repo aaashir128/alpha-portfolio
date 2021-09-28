@@ -1,8 +1,22 @@
-import { Button, IconButton } from "@material-ui/core";
+import { Box, Button, IconButton, Modal, Typography } from "@material-ui/core";
 import { Close, Edit } from "@material-ui/icons";
-import React from "react";
+import React, { useState } from "react";
+import db from "../config/firebase";
 import "./AdminPortfolio.css";
 
+const style = {
+  position: "absolute",
+  display: "flex",
+  flexDirection: "column",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 function AdminPortfolio({
   image,
   title,
@@ -10,15 +24,66 @@ function AdminPortfolio({
   githubURL,
   webURL,
   timestamp,
+  id,
 }) {
+  const [newTitle, setNewTitle] = useState(title);
+  const [newDetails, setNewDetails] = useState(details);
+  const [newGithubURL, setNewGithubURL] = useState(githubURL);
+  const [newWebURL, setNewWebURL] = useState(webURL);
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const editItem = () => {
+    db.collection("portfolio").doc(id).set({
+      image: image,
+      timestamp: timestamp,
+      title: newTitle,
+      details: newDetails,
+      githubURL: newGithubURL,
+      webURL: newWebURL,
+    });
+  };
+
+  const deleteItem = () => {
+    db.collection("portfolio").doc(id).delete();
+  };
+
   return (
     <div className="adminPortfolio">
       <div className="adminPortfolio__container">
         <div className="adminPortfolio__containerTop">
-          <IconButton>
+          <IconButton onClick={handleOpen}>
             <Edit />
           </IconButton>
-          <IconButton>
+          <Modal open={open} onClose={handleClose}>
+            <Box sx={style}>
+              <h5>Title:</h5>
+              <input
+                defaultValue={title}
+                onChange={(e) => setNewTitle(e.target.value)}
+              />
+              <h5>Details:</h5>
+              <input
+                defaultValue={details}
+                onChange={(e) => setNewDetails(e.target.value)}
+              />
+              <h5>Github URL:</h5>
+              <input
+                defaultValue={githubURL}
+                onChange={(e) => setNewGithubURL(e.target.value)}
+              />
+              <h5>Website URL:</h5>
+              <input
+                defaultValue={webURL}
+                onChange={(e) => setNewWebURL(e.target.value)}
+              />
+              <Button onClick={editItem}>Edit and Update</Button>
+            </Box>
+          </Modal>
+
+          <IconButton onClick={deleteItem}>
             <Close />
           </IconButton>
         </div>
@@ -28,7 +93,7 @@ function AdminPortfolio({
         <div className="adminPortfolio__containertxt">
           <div className="adminPortfolio__containertxtHead">
             <h4>{title}</h4>
-            <small>4:30 PM, 2 Ahg 2020</small>
+            <small>{new Date(timestamp?.toDate()).toDateString()}</small>
           </div>
           <div className="adminPortfolio__containertxtDetails">
             <p>{details}</p>

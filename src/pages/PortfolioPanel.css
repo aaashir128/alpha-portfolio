@@ -22,6 +22,7 @@
     flex: 0.4;
     border: 1px solid lightgray;
     overflow: auto;
+    margin-bottom: 50px;
   }
 
   .portfolioPanel__addNew {

@@ -5,8 +5,10 @@ import Title from "../components/Title";
 import db from "../config/firebase";
 import "./ContactPage.css";
 import firebase from "firebase";
+import { useStateValue } from "../config/StateProvider";
 
 function ContactPage() {
+  const [{ user }, dispatch] = useStateValue();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -15,18 +17,26 @@ function ContactPage() {
   const sendMessage = (e) => {
     e.preventDefault();
 
-    db.collection("messages")
-      // .doc(`${name}`)
-      // .collection(`${name} messages`)
+    db.collection("user")
+      .doc(`OVcwoAcAT8SbXfj6bHVgQxR4kgH3`)
+      .collection(`messages`)
       .add({
         name: name,
         email: email,
         subject: subject,
         message: message,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      })
+      .then(() => {
+        alert("Message has been successfully sent");
       });
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
   };
 
+  console.log(user);
   return (
     <div className="contactPage">
       <Title title="Contact Me" span="Contact Me" />
